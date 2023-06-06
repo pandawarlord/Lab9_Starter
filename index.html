@@ -87,7 +87,15 @@
     </section>
   </main>
 
-  <script>
+  
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+<script>
+  window.TrackJS && TrackJS.install({ 
+    token: "862f0654bf5a41be9aac2f4d8fb3bc36"
+    // for more configuration options, see https://docs.trackjs.com
+  });
+
+                        
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -95,7 +103,16 @@
       let firstNum = document.querySelector('#first-num').value;
       let secondNum = document.querySelector('#second-num').value;
       let operator = document.querySelector('#operator').value;
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+      try{
+        var status = "balls";
+        output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+        } catch (err){
+          status = "unsuccessfull balls";
+          throw new InputError("NaN");
+        } finally{
+            console.log(`Task Performed ${status}`);
+      }
+      
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
@@ -126,10 +143,9 @@
     }
     let labelConsoleGroup = "Grouped Elements";
     let array = [
-      { balls
-      }, 
-      { balls2
-      }
+      'balls',
+      'balllllls',
+      'baLlLlLs'
     ];
     window.onerror = function(message, url, line, col, error) {
       console.log(`${message}\n At ${line}:${col} of ${url}`);
@@ -150,7 +166,7 @@
       let x = 6;
       let y = 9;
       const reason = 'they make the funny number';
-      console.assert((x + y) == 15, {x,y,reason});
+      console.assert(x + y === 15, {x,y,reason});
     }
     function consoleClearButton(){
       console.clear();
@@ -181,15 +197,13 @@
       console.timeEnd();
     }
     function consoleTraceButton() {
-      const doSomething1 = () => { doSomething2(); };
-      const doSomething2 = () => { doSomething3(); };
-      const doSomething3 = () => { doSomething4(); };
-      const doSomething4 = () => { console.trace(); };
-      doSomething1();
+      const tracer1 = () => { tracer2(); };
+      const tracer2 = () => { console.trace(); };
+      tracer1();
     }
 
     function consoleGlobalErrorButton() {
-      gonnaGoBoom();
+      balllllssssshehehehe();
     }
   </script>
 </body>

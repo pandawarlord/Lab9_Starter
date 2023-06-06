@@ -120,27 +120,7 @@
     // Start your code here
     // You may move this JS to another file if you wish
 
-    let arrayFuncs = [
-      consoleLogButton,
-      consoleErrorButton, 
-      consoleCountButton, 
-      consoleWarnButton, 
-      consoleAssertButton, 
-      consoleClearButton, 
-      consoleDirButton, 
-      consoleDirXmlButton, 
-      consoleGroupStartButton, 
-      consoleGroupEndButton,
-      consoleTableButton,
-      consoleStartTimerButton, 
-      consoleEndTimerButton,
-      consoleTraceButton, 
-      consoleGlobalErrorButton
-    ];
 
-    for (let i = 0; i < errorBtns.length; i++) {
-      errorBtns[i].addEventListener("click", arrayFuncs[i]);
-    }
     let labelConsoleGroup = "Grouped Elements";
     let array = [
       'balls',
@@ -150,61 +130,60 @@
     window.onerror = function(message, url, line, col, error) {
       console.log(`${message}\n At ${line}:${col} of ${url}`);
     };
-    function consoleLogButton() {
+    errorBtns[0].addEventListener('click', () => {
       console.log("balls");
-    }
-    function consoleErrorButton() {
+    });
+    errorBtns[1].addEventListener('click', () => {
       console.error("balls error");
-    }
-    function consoleCountButton(){
+    });
+    errorBtns[2].addEventListener('click', () => {
       console.count("counting balls");
-    }
-    function consoleWarnButton() {
+    });
+    errorBtns[3].addEventListener('click', () => {
       console.warn("warning balls");
-    }
-    function consoleAssertButton(){
-      let x = 6;
-      let y = 9;
-      const reason = 'they make the funny number';
-      console.assert(x + y === 15, {x,y,reason});
-    }
-    function consoleClearButton(){
+    });
+    errorBtns[4].addEventListener('click', () => {
+
+      let reason = 'they make the funny number';
+      console.assert(6 + 9 === 15, {x,y,reason});
+    });
+    errorBtns[5].addEventListener('click', () => {
       console.clear();
-    }
-    function consoleDirButton(){
+    });
+    errorBtns[6].addEventListener('click', () => {
       console.dir(document.body);
-    }
-    function consoleDirXmlButton() {
+    });
+    errorBtns[7].addEventListener('click', () => {
       console.dirxml(document.body);
-    }
-    function consoleGroupStartButton() {
+    });
+    errorBtns[8].addEventListener('click', () => {
       console.group(labelConsoleGroup);
-    }
+    });
 
-    function consoleGroupEndButton() {
+    errorBtns[9].addEventListener('click', () => {
       console.groupEnd(labelConsoleGroup);
-    }
+    });
 
-    function consoleTableButton() {
+    errorBtns[10].addEventListener('click', () => {
       console.table(array);
-    }
+    });
 
-    function consoleStartTimerButton() {
+    errorBtns[11].addEventListener('click', () => {
       console.time();
-    }
+    });
 
-    function consoleEndTimerButton() {
+    errorBtns[12].addEventListener('click', () => {
       console.timeEnd();
-    }
-    function consoleTraceButton() {
+    });
+    errorBtns[13].addEventListener('click', () => {
       const tracer1 = () => { tracer2(); };
       const tracer2 = () => { console.trace(); };
       tracer1();
-    }
+    });
 
-    function consoleGlobalErrorButton() {
+    errorBtns[14].addEventListener('click', () => {
       balllllssssshehehehe();
-    }
+    });
   </script>
 </body>
 

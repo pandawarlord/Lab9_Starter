@@ -102,6 +102,95 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    let arrayFuncs = [
+      consoleLogButton,
+      consoleErrorButton, 
+      consoleCountButton, 
+      consoleWarnButton, 
+      consoleAssertButton, 
+      consoleClearButton, 
+      consoleDirButton, 
+      consoleDirXmlButton, 
+      consoleGroupStartButton, 
+      consoleGroupEndButton,
+      consoleTableButton,
+      consoleStartTimerButton, 
+      consoleEndTimerButton,
+      consoleTraceButton, 
+      consoleGlobalErrorButton
+    ];
+
+    for (let i = 0; i < errorBtns.length; i++) {
+      errorBtns[i].addEventListener("click", arrayFuncs[i]);
+    }
+    let labelConsoleGroup = "Grouped Elements";
+    let array = [
+      { balls
+      }, 
+      { balls2
+      }
+    ];
+    window.onerror = function(message, url, line, col, error) {
+      console.log(`${message}\n At ${line}:${col} of ${url}`);
+    };
+    function consoleLogButton() {
+      console.log("balls");
+    }
+    function consoleErrorButton() {
+      console.error("balls error");
+    }
+    function consoleCountButton(){
+      console.count("counting balls");
+    }
+    function consoleWarnButton() {
+      console.warn("warning balls");
+    }
+    function consoleAssertButton(){
+      let x = 6;
+      let y = 9;
+      const reason = 'they make the funny number';
+      console.assert((x + y) == 15, {x,y,reason});
+    }
+    function consoleClearButton(){
+      console.clear();
+    }
+    function consoleDirButton(){
+      console.dir(document.body);
+    }
+    function consoleDirXmlButton() {
+      console.dirxml(document.body);
+    }
+    function consoleGroupStartButton() {
+      console.group(labelConsoleGroup);
+    }
+
+    function consoleGroupEndButton() {
+      console.groupEnd(labelConsoleGroup);
+    }
+
+    function consoleTableButton() {
+      console.table(array);
+    }
+
+    function consoleStartTimerButton() {
+      console.time();
+    }
+
+    function consoleEndTimerButton() {
+      console.timeEnd();
+    }
+    function consoleTraceButton() {
+      const doSomething1 = () => { doSomething2(); };
+      const doSomething2 = () => { doSomething3(); };
+      const doSomething3 = () => { doSomething4(); };
+      const doSomething4 = () => { console.trace(); };
+      doSomething1();
+    }
+
+    function consoleGlobalErrorButton() {
+      gonnaGoBoom();
+    }
   </script>
 </body>
 
